@@ -16,6 +16,7 @@ public:
 	void OnMenuOpen(wxCommandEvent& evt);
 	void OnMenuSave(wxCommandEvent& evt);
 	void OnMenuExit(wxCommandEvent& evt);
+	void OnMenuSettings(wxCommandEvent& evt);
 
 
 	wxDECLARE_EVENT_TABLE();

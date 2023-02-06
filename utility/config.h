@@ -8,5 +8,6 @@ namespace AppID
 		int OpenFile = 10001;
 		int SaveFile = 10002;
 		int Exit = 10004;
+		int Settings = 10005;
 	}
 }

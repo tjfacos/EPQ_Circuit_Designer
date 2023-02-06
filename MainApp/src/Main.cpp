@@ -1,5 +1,6 @@
 #include "Main.h"
 #include "DesignCanvas.h"
+#include "SettingsFrame.h"
 
 
 
@@ -10,6 +11,7 @@ wxBEGIN_EVENT_TABLE(Main, wxFrame)
 	EVT_MENU(AppID::MainMenuBar::OpenFile, Main::OnMenuOpen)
 	EVT_MENU(AppID::MainMenuBar::SaveFile, Main::OnMenuSave)
 	EVT_MENU(AppID::MainMenuBar::Exit, Main::OnMenuExit)
+	EVT_MENU(AppID::MainMenuBar::Settings, Main::OnMenuSettings)
 wxEND_EVENT_TABLE();
 
 Main::Main() : wxFrame(nullptr, wxID_ANY, "Electronic Circuit Designer v0.0.1", wxPoint(0, 0), wxSize(800, 700))
@@ -24,6 +26,7 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Electronic Circuit Designer v0.0.1", 
 	fileMenu->Append(AppID::MainMenuBar::NewFile, "New");
 	fileMenu->Append(AppID::MainMenuBar::OpenFile, "Open");
 	fileMenu->Append(AppID::MainMenuBar::SaveFile, "Save");
+	fileMenu->Append(AppID::MainMenuBar::Settings, "Settings");
 	fileMenu->Append(AppID::MainMenuBar::Exit, "Exit");
 	m_mainMenuBar->Append(fileMenu, "File");
 
@@ -32,6 +35,13 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Electronic Circuit Designer v0.0.1", 
 
 Main::~Main()
 {}
+
+void Main::OnMenuSettings(wxCommandEvent& evt)
+{
+	SettingsFrame* f = new SettingsFrame(this, wxID_ANY, "Settings", wxDefaultPosition, wxDefaultSize);
+	f->Show();
+	evt.Skip();
+}
 
 void Main::OnMenuNew(wxCommandEvent & evt)
 {
@@ -53,3 +63,4 @@ void Main::OnMenuExit(wxCommandEvent& evt)
 	Close();
 	evt.Skip();
 }
+

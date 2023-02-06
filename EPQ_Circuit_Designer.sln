@@ -7,8 +7,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MainApp", "MainApp\MainApp.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ElectronicsLogic", "ElectronicsLogic\ElectronicsLogic.vcxproj", "{6AE583CB-DD3A-453C-A397-99BEC8C1F244}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenProject", "OpenProject\OpenProject.vcxproj", "{1BBC7104-FE0D-4B1D-9945-D61E58A8AB86}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "utility", "utility\config.vcxproj", "{9D1ADF61-6C50-4D34-9B28-9BC9C9F4E460}"
 EndProject
 Global
@@ -35,14 +33,6 @@ Global
 		{6AE583CB-DD3A-453C-A397-99BEC8C1F244}.Release|x64.Build.0 = Release|x64
 		{6AE583CB-DD3A-453C-A397-99BEC8C1F244}.Release|x86.ActiveCfg = Release|Win32
 		{6AE583CB-DD3A-453C-A397-99BEC8C1F244}.Release|x86.Build.0 = Release|Win32
-		{1BBC7104-FE0D-4B1D-9945-D61E58A8AB86}.Debug|x64.ActiveCfg = Debug|x64
-		{1BBC7104-FE0D-4B1D-9945-D61E58A8AB86}.Debug|x64.Build.0 = Debug|x64
-		{1BBC7104-FE0D-4B1D-9945-D61E58A8AB86}.Debug|x86.ActiveCfg = Debug|Win32
-		{1BBC7104-FE0D-4B1D-9945-D61E58A8AB86}.Debug|x86.Build.0 = Debug|Win32
-		{1BBC7104-FE0D-4B1D-9945-D61E58A8AB86}.Release|x64.ActiveCfg = Release|x64
-		{1BBC7104-FE0D-4B1D-9945-D61E58A8AB86}.Release|x64.Build.0 = Release|x64
-		{1BBC7104-FE0D-4B1D-9945-D61E58A8AB86}.Release|x86.ActiveCfg = Release|Win32
-		{1BBC7104-FE0D-4B1D-9945-D61E58A8AB86}.Release|x86.Build.0 = Release|Win32
 		{9D1ADF61-6C50-4D34-9B28-9BC9C9F4E460}.Debug|x64.ActiveCfg = Debug|x64
 		{9D1ADF61-6C50-4D34-9B28-9BC9C9F4E460}.Debug|x64.Build.0 = Debug|x64
 		{9D1ADF61-6C50-4D34-9B28-9BC9C9F4E460}.Debug|x86.ActiveCfg = Debug|Win32
