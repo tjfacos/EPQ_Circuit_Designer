@@ -1,11 +1,18 @@
-#include "../include/Main.h"
+#include "Main.h"
+#include "DesignCanvas.h"
+
+
 
 #include "config.h"
 
 wxBEGIN_EVENT_TABLE(Main, wxFrame)
+	EVT_MENU(AppID::MainMenuBar::NewFile, Main::OnMenuNew)
+	EVT_MENU(AppID::MainMenuBar::OpenFile, Main::OnMenuOpen)
+	EVT_MENU(AppID::MainMenuBar::SaveFile, Main::OnMenuSave)
+	EVT_MENU(AppID::MainMenuBar::Exit, Main::OnMenuExit)
 wxEND_EVENT_TABLE();
 
-Main::Main() : wxFrame(nullptr, wxID_ANY, "Title", wxPoint(0, 0), wxSize(800, 700))
+Main::Main() : wxFrame(nullptr, wxID_ANY, "Electronic Circuit Designer v0.0.1", wxPoint(0, 0), wxSize(800, 700))
 {
 	m_mainMenuBar = new wxMenuBar();
 	this->SetMenuBar(m_mainMenuBar);
@@ -25,3 +32,24 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Title", wxPoint(0, 0), wxSize(800, 70
 
 Main::~Main()
 {}
+
+void Main::OnMenuNew(wxCommandEvent & evt)
+{
+	DesignFrame* f = new DesignFrame(this, wxID_ANY, "Test", wxPoint(100, 100), wxDefaultSize);
+	f->Show();
+	evt.Skip();
+}
+
+void Main::OnMenuOpen(wxCommandEvent& evt)
+{
+}
+
+void Main::OnMenuSave(wxCommandEvent& evt)
+{
+}
+
+void Main::OnMenuExit(wxCommandEvent& evt)
+{
+	Close();
+	evt.Skip();
+}
