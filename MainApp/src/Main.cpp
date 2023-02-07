@@ -14,7 +14,7 @@ wxBEGIN_EVENT_TABLE(Main, wxFrame)
 	EVT_MENU(AppID::MainMenuBar::Settings, Main::OnMenuSettings)
 wxEND_EVENT_TABLE();
 
-Main::Main() : wxFrame(nullptr, wxID_ANY, "Electronic Circuit Designer v0.0.1", wxPoint(0, 0), wxSize(800, 700))
+Main::Main() : wxFrame(nullptr, wxID_ANY, "Electronic Circuit Designer v0.0.1", wxPoint(0, 0), wxDefaultSize)
 {
 	m_mainMenuBar = new wxMenuBar();
 	this->SetMenuBar(m_mainMenuBar);
@@ -31,6 +31,14 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Electronic Circuit Designer v0.0.1", 
 	m_mainMenuBar->Append(fileMenu, "File");
 
 
+	// Define and add Help
+	wxMenu* HelpMenu = new wxMenu();
+	HelpMenu->Append(AppID::MainMenuBar::Guide, "User Guide");
+	HelpMenu->Append(AppID::MainMenuBar::About, "About");
+	m_mainMenuBar->Append(HelpMenu, "Help");
+
+	m_toolbar = this->CreateToolBar(wxTB_VERTICAL, wxID_ANY);
+	m_toolbar->Realize();
 }
 
 Main::~Main()

@@ -9,5 +9,7 @@ namespace AppID
 		int SaveFile = 10002;
 		int Exit = 10004;
 		int Settings = 10005;
+		int Guide = 10006;
+		int About = 10007;
 	}
 }
