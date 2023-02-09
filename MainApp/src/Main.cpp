@@ -60,7 +60,7 @@ void Main::OnMenuNew(wxCommandEvent & evt)
 	m_notebook->AddPage(f, "Test New");
 	evt.Skip();
 }
-
+ 
 void Main::OnMenuOpen(wxCommandEvent& evt)
 {
 }
