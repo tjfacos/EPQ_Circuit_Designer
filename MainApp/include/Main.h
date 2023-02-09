@@ -1,6 +1,7 @@
 #pragma once
 
 #include <wx/wx.h>
+#include <wx/notebook.h>
 
 class Main : public wxFrame
 {
@@ -10,7 +11,9 @@ public:
 	~Main();
 
 	wxMenuBar* m_mainMenuBar = nullptr;
-	wxToolBar* m_toolbar;
+	wxToolBar* m_toolbar = nullptr;
+
+	wxNotebook* m_notebook = nullptr;
 
 	void OnMenuNew(wxCommandEvent &evt);
 	void OnMenuOpen(wxCommandEvent& evt);

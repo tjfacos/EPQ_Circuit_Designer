@@ -21,7 +21,7 @@
     <ClInclude Include="include\Main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\DesignCanvas.h">
+    <ClInclude Include="include\DesignFrame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\SettingsFrame.h">
@@ -35,7 +35,7 @@
     <ClCompile Include="src\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\DesignCanvas.cpp">
+    <ClCompile Include="src\DesignFrame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\SettingsFrame.cpp">

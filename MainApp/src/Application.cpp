@@ -1,10 +1,5 @@
 #include "Application.h"
 
-// To-Do
-//
-// - Make ultility be compiled as .lib when program is run
-//
-//
 
 wxIMPLEMENT_APP(Application);
 

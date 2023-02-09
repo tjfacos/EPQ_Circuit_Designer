@@ -20,13 +20,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Application.h" />
-    <ClInclude Include="include\DesignCanvas.h" />
+    <ClInclude Include="include\DesignFrame.h" />
     <ClInclude Include="include\Main.h" />
     <ClInclude Include="include\SettingsFrame.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
-    <ClCompile Include="src\DesignCanvas.cpp" />
+    <ClCompile Include="src\DesignFrame.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\SettingsFrame.cpp" />
   </ItemGroup>

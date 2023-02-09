@@ -1,5 +1,5 @@
 #include "Main.h"
-#include "DesignCanvas.h"
+#include "DesignFrame.h"
 #include "SettingsFrame.h"
 
 
@@ -39,6 +39,9 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Electronic Circuit Designer v0.0.1", 
 
 	m_toolbar = this->CreateToolBar(wxTB_VERTICAL, wxID_ANY);
 	m_toolbar->Realize();
+
+	m_notebook = new wxNotebook(this, wxID_ANY);
+	m_notebook->AddPage(new DesignFrame(m_notebook, wxID_ANY, wxDefaultPosition, wxDefaultSize), "Test");
 }
 
 Main::~Main()
@@ -53,8 +56,8 @@ void Main::OnMenuSettings(wxCommandEvent& evt)
 
 void Main::OnMenuNew(wxCommandEvent & evt)
 {
-	DesignFrame* f = new DesignFrame(this, wxID_ANY, "Test", wxPoint(100, 100), wxDefaultSize);
-	f->Show();
+	DesignFrame* f = new DesignFrame(m_notebook, wxID_ANY, wxDefaultPosition, wxDefaultSize);
+	m_notebook->AddPage(f, "Test New");
 	evt.Skip();
 }
 
