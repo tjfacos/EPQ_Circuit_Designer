@@ -9,5 +9,7 @@ public:
 	~DesignFrame();
 
 	void OnPaint(wxPaintEvent& evt);
+
+	bool Saved = false;
 };
 

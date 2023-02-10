@@ -7,11 +7,14 @@
 #include "config.h"
 
 wxBEGIN_EVENT_TABLE(Main, wxFrame)
+	// MainMenuBar Events
 	EVT_MENU(AppID::MainMenuBar::NewFile, Main::OnMenuNew)
 	EVT_MENU(AppID::MainMenuBar::OpenFile, Main::OnMenuOpen)
 	EVT_MENU(AppID::MainMenuBar::SaveFile, Main::OnMenuSave)
 	EVT_MENU(AppID::MainMenuBar::Exit, Main::OnMenuExit)
 	EVT_MENU(AppID::MainMenuBar::Settings, Main::OnMenuSettings)
+
+
 wxEND_EVENT_TABLE();
 
 Main::Main() : wxFrame(nullptr, wxID_ANY, "Electronic Circuit Designer v0.0.1", wxPoint(0, 0), wxDefaultSize)
@@ -40,8 +43,9 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Electronic Circuit Designer v0.0.1", 
 	m_toolbar = this->CreateToolBar(wxTB_VERTICAL, wxID_ANY);
 	m_toolbar->Realize();
 
-	m_notebook = new wxNotebook(this, wxID_ANY);
-	m_notebook->AddPage(new DesignFrame(m_notebook, wxID_ANY, wxDefaultPosition, wxDefaultSize), "Test");
+	m_notebook = new wxAuiNotebook(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxAUI_NB_CLOSE_BUTTON | wxAUI_NB_TAB_MOVE | wxAUI_NB_CLOSE_ON_ALL_TABS);
+
+	CreateNewDesign();
 }
 
 Main::~Main()
@@ -54,10 +58,17 @@ void Main::OnMenuSettings(wxCommandEvent& evt)
 	evt.Skip();
 }
 
-void Main::OnMenuNew(wxCommandEvent & evt)
+void Main::CreateNewDesign()
 {
 	DesignFrame* f = new DesignFrame(m_notebook, wxID_ANY, wxDefaultPosition, wxDefaultSize);
-	m_notebook->AddPage(f, "Test New");
+	wxString title = "Untitled Design - " + std::to_string(++untitled_counter);
+	m_notebook->AddPage(f, title, true);
+}
+
+
+void Main::OnMenuNew(wxCommandEvent & evt)
+{
+	CreateNewDesign();
 	evt.Skip();
 }
  
